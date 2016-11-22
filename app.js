@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('./config');
+var log = require('./libs/log')(module); 
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -20,7 +21,7 @@ app.set('port', config.get('port'));
 // create server
 
 http.createServer(app).listen(app.get('port'), function(){
-   console.log('Express server listening on port ' + config.get('port')); 
+   log.info('Express server listening on port ' + config.get('port')); 
 });
 
 // view engine setup
