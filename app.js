@@ -6,6 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var config = require('./config');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -14,12 +15,12 @@ var app = express();
 
 // server setup
 
-app.set('port', 3000);
+app.set('port', config.get('port'));
 
 // create server
 
 http.createServer(app).listen(app.get('port'), function(){
-   console.log('Express server listening on port ' + app.get('port')); 
+   console.log('Express server listening on port ' + config.get('port')); 
 });
 
 // view engine setup
