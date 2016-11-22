@@ -11,6 +11,7 @@ var log = require('./libs/log')(module);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var test = require('./routes/test');
 
 var app = express();
 
@@ -24,7 +25,7 @@ http.createServer(app).listen(app.get('port'), function(){
    log.info('Express server listening on port ' + config.get('port')); 
 });
 
-// view engine setup
+// configuration templating system
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -38,6 +39,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+// Set testing view page
+
+app.use('/test', test);
+//app.set('/test', function(req, res, next) {
+//    res.render("test", {
+//        title: "Vladyslav"
+//    });
+//});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
