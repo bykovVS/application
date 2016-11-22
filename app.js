@@ -26,6 +26,7 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 // configuration templating system
+app.engine('ejs', require('ejs-locals')); // layout partial block
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -43,11 +44,6 @@ app.use('/users', users);
 // Set testing view page
 
 app.use('/test', test);
-//app.set('/test', function(req, res, next) {
-//    res.render("test", {
-//        title: "Vladyslav"
-//    });
-//});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
