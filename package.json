@@ -1,30 +1,17 @@
 {
   "name": "application",
-  "version": "1.0.0",
-  "description": "The new application for student learning",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bykovVS/application.git"
-  },
-  "keywords": [
-    "node",
-    "js",
-    "learning",
-    "html",
-    "css",
-    "mongoDb"
-  ],
-  "author": "Vladyslav Bykov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bykovVS/application/issues"
-  },
-  "homepage": "https://github.com/bykovVS/application#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   }
 }
